@@ -51,7 +51,7 @@ public class register extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        RequestDispatcher dispatcher=request.getRequestDispatcher("/html/login.jsp");
+        RequestDispatcher dispatcher=request.getRequestDispatcher("/html/register.jsp");
         try {
             dispatcher.forward(request,response);
         } catch (ServletException e) {

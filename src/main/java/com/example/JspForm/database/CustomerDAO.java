@@ -19,6 +19,10 @@ public class CustomerDAO extends DataAccessObject<Customer> {
     private static final String GET_ONE="SELECT customer_id,first_name,last_name,email,phone,address,city,state,zipcode FROM customer" +
             " WHERE customer_id=?";
 
+
+    private static final String GET_USER="SELECT customer_id,first_name,last_name,email,phone,address,city,state,zipcode\n" +
+            "FROM customer WHERE email=? AND phone=?";
+
     private static final String UPDATE = "UPDATE customer SET first_name = ?, last_name=?, " +
             "email = ?, phone = ?, address = ?, city = ?, state = ?, zipcode = ? WHERE customer_id = ?";
 
@@ -126,6 +130,34 @@ public class CustomerDAO extends DataAccessObject<Customer> {
 
     @Override
     public void delete(long id) {
+
+    }
+
+    @Override
+    public Customer getUser(String username, String password) {
+        Customer customer=new Customer();
+        try(PreparedStatement preparedStatement=this.connection.prepareStatement(GET_USER);){
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,password);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()){
+                customer.setFirstName(resultSet.getString("first_name"));
+                customer.setLastName(resultSet.getString("last_name"));
+                customer.setEmail(resultSet.getString("email"));
+                customer.setPhone(resultSet.getString("phone"));
+                customer.setAddress(resultSet.getString("address"));
+                customer.setCity(resultSet.getString("city"));
+                customer.setState(resultSet.getString("state"));
+                customer.setZipcode(resultSet.getString("zipcode"));
+            }
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw  new RuntimeException(e);
+
+        }
+        return customer;
 
     }
 }

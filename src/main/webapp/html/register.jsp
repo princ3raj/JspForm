@@ -49,12 +49,27 @@
 				}
 			%>
 			<em>LOGIN USER</em>
-			<form action="login" method="post">
-				<label>Username</label>
-				<input type="text" name="username" id="username" placeholder="username is your email"><br />
-				<label>Password</label>
-				<input type="number" name="password" id="password" placeholder="password is  your number"><br />
-				<input type="submit" value="Login">
+			<form action="register" method="post">
+				<label>First name</label>
+				<input type="text" name="firstname" id="firstname"><br/>
+				<label>Last Name</label>
+				<input type="text" name="lastname" id="lastname"><br/>
+				<label>Email</label>
+				<input type="email" name="email" id="email"><br/>
+				<label>Phone Number</label>
+				<input type="number" name="phone" id="number"><br/>
+				<label>Address</label>
+				<input type="text" name="address" id="address"><br/>
+				<label>City</label>
+				<input type="text" name="city" id="city"><br/>
+				<label>State</label>
+				<input type="text" name="state" id="state"><br/>
+				<label>ZipCode</label>
+				<input type="number" name="zipcode" id="zipcode"><br/>
+
+
+
+				<input type="submit" value="Register">
 			</form>
 		</div>
 	</section>
