@@ -19,7 +19,7 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-					<li><a href="home">home</a></li>
+					<li><a href="register">Register</a></li>
 					<li><a href="redirect">linkedIn</a></li>
 
 				</ul>
@@ -50,7 +50,7 @@
 			%>
 			<em>LOGIN USER</em>
 			<form action="login" method="post">
-				<label>Username</label>
+				<label>Email</label>
 				<input type="text" name="username" id="username" placeholder="username is your email"><br />
 				<label>Password</label>
 				<input type="number" name="password" id="password" placeholder="password is  your number"><br />

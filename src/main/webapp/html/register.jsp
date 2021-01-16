@@ -19,8 +19,8 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-					<li><a href="home">home</a></li>
-					<li><a href="redirect">linkedIn</a></li>
+					<li><a href="login">Login</a></li>
+					<li><a href="#">linkedIn</a></li>
 
 				</ul>
 				<!-- navbar -->
